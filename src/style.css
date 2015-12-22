@@ -1,3 +1,6 @@
+body {
+  padding: 24px;
+}
 .complete {
   color: rgb(208, 208, 208);
 }
