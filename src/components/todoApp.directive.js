@@ -7,12 +7,12 @@ export default function() {
                 <todo-input tasks="todoApp.tasks"></todo-input>
                 <todo-tasks tasks="todoApp.tasks"></todo-tasks>
               </div>`,
-    controller: todoAppController,
+    controller: TodoAppController,
     controllerAs: 'todoApp',
   }
 }
 
-class todoAppController {
+class TodoAppController {
   constructor() {
     this.title = 'Corey\'s Todo Application';
     this.tasks = [];

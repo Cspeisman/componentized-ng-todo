@@ -5,10 +5,10 @@ export default function() {
     scope: {
       tasks: '=',
     },
-    controller: TaskController,
-    controllerAs: 'taskCtl',
+    controller: TaskListController,
+    controllerAs: 'listCtl',
     template: `<ul ng-repeat="task in tasks track by $index">
-                 <li ng-class="taskCtl.assignClass(task.complete)"><input type="checkbox"
+                 <li ng-class="listCtl.assignClass(task.complete)"><input type="checkbox"
                     ng-checked="task.complete"
                     ng-model="task.complete" />
                     {{task.todo}}
@@ -17,7 +17,7 @@ export default function() {
   }
 }
 
-class TaskController {
+class TaskListController {
   assignClass(taskCompletion) {
     return taskCompletion ? 'complete' : 'incomplete';
   }

@@ -3,7 +3,7 @@ export default function() {
     scope: {
       tasks: '='
     },
-    controller: inputController,
+    controller: TaskInputController,
     controllerAs: 'inputCtl',
     template: `<form ng-submit="inputCtl.save()">
                  <input placeholder="buy salami..." type="text" ng-model="inputCtl.task.todo"/>
@@ -12,7 +12,7 @@ export default function() {
   }
 }
 
-class inputController {
+class TaskInputController {
   constructor($scope){
     this.tasks = $scope.tasks;
   }
