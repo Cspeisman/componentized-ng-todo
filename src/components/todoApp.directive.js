@@ -21,7 +21,6 @@ class TodoAppController {
   }
 
   mapStateToThis(state) {
-    console.log(state)
     return {
       tasks: state.tasks
     };
