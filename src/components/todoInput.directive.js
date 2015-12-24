@@ -1,3 +1,5 @@
+import {addTask} from '../actions/todoActions';
+
 export default function() {
   return {
     scope: {
@@ -13,12 +15,13 @@ export default function() {
 }
 
 class TaskInputController {
-  constructor($scope){
+  constructor($ngRedux, $scope){
     this.tasks = $scope.tasks;
+    $ngRedux.connect(null, {addTask: addTask})(this);
   }
 
   save() {
-    this.tasks.push({...this.task, complete: false});
+    this.addTask(this.task);
     this.task = {};
   }
 }

@@ -1,3 +1,4 @@
+import * as todoActions from '../actions/todoActions';
 import todoInput from './todoInput.directive';
 
 export default function() {
@@ -6,6 +7,7 @@ export default function() {
                 <h1>{{todoApp.title}}</h1>
                 <todo-input tasks="todoApp.tasks"></todo-input>
                 <todo-tasks tasks="todoApp.tasks"></todo-tasks>
+                {{todo.tasks}}
               </div>`,
     controller: TodoAppController,
     controllerAs: 'todoApp',
@@ -13,8 +15,15 @@ export default function() {
 }
 
 class TodoAppController {
-  constructor() {
+  constructor($ngRedux) {
     this.title = 'Corey\'s Todo Application';
-    this.tasks = [];
+    let unsubscribe = $ngRedux.connect(this.mapStateToThis, todoActions)(this);
+  }
+
+  mapStateToThis(state) {
+    console.log(state)
+    return {
+      tasks: state.tasks
+    };
   }
 }
