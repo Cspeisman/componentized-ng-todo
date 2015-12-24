@@ -1,4 +1,4 @@
-## Componentized ng todo Application
+## Componentized ng todo application
 ---
 
 My attempt to say goodbye to ng-controllers (for a lot of reasons) and stick to custom directives only.
