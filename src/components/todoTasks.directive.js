@@ -1,5 +1,5 @@
 import '../style.css';
-import {completeTask} from '../actions/todoActions';
+import {toggleTask} from '../actions/todoActions';
 
 export default function() {
   return {
@@ -9,27 +9,24 @@ export default function() {
     controller: TaskListController,
     controllerAs: 'listCtl',
     template: `<ul ng-repeat="task in tasks track by $index">
-                 <li ng-class="listCtl.assignClass(task.complete)"><input type="checkbox"
-                    ng-checked="task.complete"
-                    ng-model="task.complete"
-                    ng-change="listCtl.toggle($index)"
+                 <li ng-class="task.complete ? 'complete' : 'incomplete'">
+                   <input type="checkbox"
+                     ng-checked="task.complete"
+                     ng-model="ughAngularIsStupid"
+                     ng-change="listCtl.toggle($index)"
                     />
-                    {{task.todo}}
+                    {{task.todo}} | {{task.complete}}
                  </li>
                </ul>`,
   }
 }
 
 class TaskListController {
-  constructor($ngRedux) {
-    $ngRedux.connect(null, {completeTask: completeTask})(this)
-  }
-
-  assignClass(taskCompletion) {
-    return taskCompletion ? 'complete' : 'incomplete';
+  constructor($ngRedux, $scope) {
+    $ngRedux.connect(null, {toggleTask: toggleTask})(this)
   }
 
   toggle(index) {
-    this.completeTask(index)
+    this.toggleTask(index)
   }
 }

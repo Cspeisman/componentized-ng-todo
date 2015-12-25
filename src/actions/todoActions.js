@@ -7,9 +7,9 @@ export function addTask(todo) {
   }
 }
 
-export function completeTask(index) {
+export function toggleTask(index) {
   return {
-    type: Actions.COMPLETE_TASK,
+    type: Actions.TOGGLE_TASK,
     taskIndex: index,
   }
 }
