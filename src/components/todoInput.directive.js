@@ -7,12 +7,12 @@ export default function() {
     template: `<form ng-submit="inputCtl.save()">
                  <input placeholder="buy salami..." type="text" ng-model="inputCtl.task.todo"/>
                  <input type='submit' />
-              </form>`
-  }
+              </form>`,
+  };
 }
 
 class TaskInputController {
-  constructor($ngRedux, $scope){
+  constructor($ngRedux) {
     $ngRedux.connect(null, {addTask: addTask})(this);
   }
 

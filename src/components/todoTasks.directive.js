@@ -15,18 +15,18 @@ export default function() {
                      ng-model="ughAngularIsStupid"
                      ng-change="listCtl.toggle($index)"
                     />
-                    {{task.todo}} | {{task.complete}}
+                    {{task.todo}}
                  </li>
                </ul>`,
-  }
+  };
 }
 
 class TaskListController {
-  constructor($ngRedux, $scope) {
-    $ngRedux.connect(null, {toggleTask: toggleTask})(this)
+  constructor($ngRedux) {
+    $ngRedux.connect(null, {toggleTask: toggleTask})(this);
   }
 
   toggle(index) {
-    this.toggleTask(index)
+    this.toggleTask(index);
   }
 }
