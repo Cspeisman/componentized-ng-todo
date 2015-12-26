@@ -36,4 +36,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    inline: true,
+    historyApiFallback: true,
+    stats: {
+      colors: true,
+      chunks: false,
+    },
+  },
 };
