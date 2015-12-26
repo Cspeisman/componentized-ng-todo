@@ -4,8 +4,8 @@ export default function() {
   return {
     template: `<div>
                  <h1>{{todoApp.title}}</h1>
-                 <task-percentage></task-percentage>
                  <todo-input></todo-input>
+                 <task-percentage></task-percentage>
                  <todo-tasks tasks="todoApp.tasks"></todo-tasks>
               </div>`,
     controller: TodoAppController,

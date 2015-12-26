@@ -7,5 +7,5 @@ My attempt to say goodbye to ng-controllers (for a lot of reasons) and stick to 
 - `git clone https://github.com/Cspeisman/componentized-ng-todo.git`
 - `cd componentized-ng-todo`
 - `npm i`
-- `npm run dev`
+- `npm start`
 - visit [http://localhost:8080](http://localhost:8080)

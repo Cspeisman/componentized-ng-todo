@@ -7,7 +7,7 @@ export default function() {
     controllerAs: 'percentageCtl',
     template: `<div>
                 <div>tasks complete: {{ percentageCtl.completedTasks() }}</div>
-                <div> percentage complete: {{percentageCtl.getPercentage()}}</div>
+                <div>percentage complete: {{ percentageCtl.getPercentage() }}</div>
               </div>`,
   };
 }
